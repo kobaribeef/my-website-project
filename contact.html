@@ -1,0 +1,23 @@
+---
+layout: base-layout.njk 
+title: Contact Me
+---
+    <form id="contactForm" method="POST" action="/contact-submit.php">
+        <label>First Name:</label>
+        <input type="text" id="txtFirstName" name="firstName" required>
+        <br>
+
+        <label>Last Name:</label>
+        <input type="text" id="txtLastName" name="lastName" required>
+        <br>
+
+        <label>Email:</label>
+        <input type="email" id="txtEmail" name="email" required>
+        <br>
+
+        <label>Comments:</label>
+        <textarea id="txtComments" name="comments" required></textarea>
+        <br>
+            
+        <input type="submit" value="SUBMIT">   
+    </form>
