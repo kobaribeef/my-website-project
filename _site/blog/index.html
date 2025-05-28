@@ -3,30 +3,86 @@
     <head> 
       <meta charset="utf-8"> 
       <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-      <title>My Blog</title> 
+      <title>My Blogs</title> 
+      <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/styles/main.css">
       <link rel="stylesheet" type="text/css" href="/styles/prism.css">
       <script src="/js/prism.js"></script>
-      <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
       <script src="/js/bootstrap.min.js" defer></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"/>
+      <style>
+      section{
+        padding: 60px 0;
+        min-height: 600px;
+      }
+      </style>
     </head> 
     <body> 
-      <header>
-        <h1>Site Header</h1>
-      </header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/contact/">Contact</a>
-        <a href="/blog/">Blog</a>
-      </nav> 
-      <main> 
-        <h1>My Blog</h1>
-        
-    <a href="/blog/sample-blog-post/">A sample blog post</a>
-    <br>
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4 ">
+      <div class="container-xxl">
+        <a class="navbar-brand">
+          <span class="text-primary fw-bold">
+            <i class="bi bi-bootstrap-fill"></i>
+            Intermediate Web Development
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact/">
+                <i class="bi bi-envelope"></i>
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">
+                <i class="bi bi-chat-right-text fa-sm"></i>
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <main>
+        <div class="text-center">
+          <h1 class="text-warning">My Blogs</h1>
+        </div> 
+        <section id="blogs">
+    <div class="container-lg">
+        <p>Here are some of my blogs available to read!</p>
+            
+                <a href="/blog/dom-methods/">Dom Methods</a>
+                <br>
+            
+                <a href="/blog/flexbox/">Flexbox</a>
+                <br>
+            
+                <a href="/blog/jQuery-syntax/">jQuery Syntax</a>
+                <br>
+            
+                <a href="/blog/temporal-api/">The Temporal API</a>
+                <br>
+            
+                <a href="/blog/tuna-salmon/">Tuna vs. Salmon</a>
+                <br>
+            
+    </div>
+</section>
 
       </main> 
-      <footer>Site Footer</footer> 
-    </body> 
+      <footer class="fs-6 py-2">
+        <div class="d-flex align-items-center footer mt-4">
+          <p class="m-auto">
+            &copy; Kobari Xiong 2022
+          </p>
+        </div>
+      </footer>
+    </body>  
     </html>

@@ -1,0 +1,59 @@
+---
+layout: base-layout.njk 
+title: Dom Methods
+"tags": ["blog"]
+date: 2022-01-01
+---
+<section id="dom-methods">
+    <div class="container-lg">
+        <p>
+            DOM methods are methods that can be used to perfom actions on objects or in other words elements of DOM.  We use Javascript to change and manipulate HTML elements of a page.  To even start changing or manipulating elements, we must first get those elements by using DOM methods.
+        </p>
+        <p>
+            First, I'll introduce to you the <b>document.getElementById()</b> method.  This method allows you to access an HTML element by their id.  All you have to do is pass in the id of the element as a <b>string</b> parameter in the method.
+            <br>  
+            This method returns an <b>element object</b> representing the element whose id property matches the specified string.  Note that this method returns the <b>first</b> element that matches the id.  In the case below, we are getting the element whose id is set to "blog".
+        </p>
+        <pre>
+            <code class="language-js">
+                document.getElementById("blog");
+            </code>
+        </pre>
+        <p>
+            The next method I'll introduce is similiar to the first method but gets an element in a different way.  This method is called <b>document.querySelector()</b>.
+            <br>
+            With this method, you can get an element based on a CSS selector instead.  What this means is that you can get elements by their id, class, or other types of selectors.  This method is more flexible and not limited unlike the previous method.
+            <br>
+            This method returns an <b>element object</b> whos CSS selector also matches the specified string.  So you must pass in the parameter as a <b>string</b> but the syntax is different.  Here's an example below:
+        </p>
+        <pre>
+            <code class="language-js">
+                document.querySelector("#blog");
+            </code>
+        </pre>
+        <p>
+            This method also gets an element whose id matches blog but notice the number sign before blog.  This number sign represents an id of an element.  Remember this method can get other types of selectors so you must know the syntax in order to grab other selectors.
+            <br>
+            Here is another example below showing how to get an element by their class attribute instead of id attribute:
+        </p>
+        <pre>
+            <code class="language-js">
+                document.querySelector("p.example");
+            </code>
+        </pre>
+        <p>
+            As you can see, the class attribute of the element is "example" but there is a "p" with a dot before the class attribute.  This lets the method know you are looking for a element with a class attribute set to "example".
+            <br>
+            The last method I'll introduce is the <b>document.querySelectorAll()</b>.
+            This method is the same as querySelector but the difference is that this method returns an <b>array of element objects</b> that matches the CSS selector instead of the first element that matches the selector.
+            <br>  
+            Use this method when you want to return multiple element objects that match a certain selector.
+            Here is an example of a method that returns an array of element objects that have their class attribute set to "example":
+            <pre>
+                <code class="language-js">
+                    document.querySelectorAll("p.example");
+                </code>
+            </pre>
+        </p>
+    </div>
+</section>

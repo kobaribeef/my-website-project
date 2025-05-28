@@ -1,0 +1,54 @@
+---
+layout: base-layout.njk 
+title: The Temporal API
+"tags": ["blog"]
+date: 2022-01-01
+---
+<section id="temporal-api">
+    <div class="container-lg">
+        <p>
+            The Temporal API is a global Object that acts as a top-level namespace. It brings a modern date/time API to the ECMAScript language. Since the Date API has been a 
+            established problem in ECMAScript, the Temporal API was proposed to be a solution for the difficulty of the Date API. The Temporal API fixes these problems by providing practicality
+            for date and time computations, first-class support for all time zones, deals only with objects representing fixed dates and times, parsing a strictly specified string format, and
+            supporting non-Gregorian calendars. Temporal provides separate ECMAScript classes for date-only, time-only, and other scoped use cases. Code is more readable and prevents bugs 
+            caused by incorrectly assuming 0, UTC, or the local time zone for values that are literally unspecified.
+        </p>
+        <p>
+            Below are some examples of using the Temporal API:
+        </p>
+        <h4>Temporal.ZonedDateTime</h4>
+        <p>
+            A Temporal.ZonedDateTime is a timezone-aware, calendar-aware date/time object that represents a real event that has happened at a specific exact time from the outlook of a 
+            certain region on Earth. The use of Temporal.ZoneDateTime is to improve the cases that require a time zone.
+        </p>
+        <pre>
+            <code class="language-js">
+                const zonedDateTime = Temporal.ZonedDateTime.from({
+                  timeZone: 'America/Onalaska',
+                  year: 2022,
+                  month: 4,
+                  day: 19,
+                  hour: 6,
+                  minute: 31,
+                  second: 21,
+                  millisecond: 0,
+                  microsecond: 3,
+                  nanosecond: 500
+                }); // => 2022-04-19T06:31:21.0000035-08:00[America/Onalaska]
+            </code>
+        </pre>
+        <h4>Temporal.Calendar</h4>
+        <p>
+            A Temporal.Calendar represents a calendar system. There are many calendar systems to use but most code will use the ISO 8601 calendar. Dates have associated Temporal.Calendar objects,
+            to perform calendar-related math. Beneath all of this, math is done by methods on the calendars.
+        </p>
+        <pre>
+            <code class="language-js">
+                const calendar = Temporal.Calendar.from('iso8601');
+                const date = calendar.dateFromFields({ year: 1999, month: 12, day: 31 }, {});
+                date.monthsInYear; // => 12
+                date.daysInYear; // => 365
+            </code>
+        </pre>
+    </div>
+</section>

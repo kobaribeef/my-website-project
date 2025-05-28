@@ -16,6 +16,18 @@ function copyJS(done){
     done();
 };
 
+function copyPHP(done){
+    gulp.src('./contact-submit.php')
+        .pipe(gulp.dest('./_site/'));
+    done();
+};
+
+function copyImages(done){
+    gulp.src('./images/**/*.*')
+        .pipe(gulp.dest('./_site/images/'));
+    done();
+};
+
 
 // EXPORTS
-exports.default = gulp.series(copyCSS, copyJS);
+exports.default = gulp.series(copyCSS, copyJS, copyPHP, copyImages);

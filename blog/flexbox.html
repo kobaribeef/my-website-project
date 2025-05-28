@@ -1,0 +1,71 @@
+---
+layout: base-layout.njk 
+title: Flexbox
+"tags": ["blog"]
+date: 2022-01-01
+---
+<section id="flexbox">
+    <div class="container-lg">
+        <p>
+            The Flexible Box Layout Model (Flexbox) is a layout model designed for one-dimensional content. It is excellent at taking a group of items which have different sizes, 
+            and gives back the best layout for those items. Flexbox can be useful for creating small-scale layouts and is responsive and mobile-friendly.
+        </p>
+        <p>
+            Before we start using flexbox to alter a group of items. We'll be using the HTML code below which shows a group of items in a div element for visualization.
+        </p>
+        <pre><code class="language-markup">
+            <script type="prism-html-markup">
+                <div class="container">
+                    <div>Item one</div>
+                    <div>Item two</div>
+                    <div>Item three</div>
+                    </div>
+            </script>
+        </code></pre>
+        <p>
+            In order to use flexbox, you need to delcare that you are using the flex formatting context and not regular block and inline layout. To use flexbox, change the 
+            value of the <b>display</b> property to <b>flex</b>.
+        </p>
+        <pre>
+            <code class="language-css">
+                .container {
+                    display: flex;
+                    }
+            </code>
+        </pre>
+        <p>
+            The group of items in the div element with class "container" will start showing some flexbox behavior and display the items as a row.
+        </p>
+        <p>
+            If you wanted to change the direction of your items to display as a column, you could use the <b>flex-direction</b> property. Items are displayed as a row intially 
+            because the initial value of <b>flex-direction</b> is a row.
+        </p>
+        <pre>
+            <code class="language-css">
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    }
+            </code>
+        </pre>
+        <p>
+            The group of items will now be displayed as a column since the flex-direction is set to column. 
+        </p>
+        <p>
+            You can also wrap flex items using the <b>flex-wrap</b> property. The initial value of flex-wrap is set to <b>nowrap</b>. This means that if there is not enough
+            space in the contrainer, the items will overflow.
+        </p>
+        <pre>
+            <code class="language-css">
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    }
+            </code>
+        </pre>
+        <p>
+            The group of items can now wrap on multiple lines.
+        </p>
+    </div>
+</section>

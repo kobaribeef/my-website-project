@@ -2,22 +2,30 @@
 layout: base-layout.njk 
 title: Contact Me
 ---
-    <form id="contactForm" method="POST" action="/contact-submit.php">
-        <label>First Name:</label>
-        <input type="text" id="txtFirstName" name="firstName" required>
-        <br>
+<section id="form">
+    <div class="container-lg">
+        <form class="row g-3" id="contactForm" action="/contact-submit.php" method="POST">
+        <div class="col-md-6">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" id="txtFirstName" name="firstName" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="txtLastName" name="lastName" required>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="txtEmail" name="email" required>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Comments</label>
+            <textarea class="form-control" id="txtComments" name="comments" required></textarea>
+        </div>
+        <div class="col-12">
+            <input class="btn btn-primary" type="submit" value="SUBMIT">
+        </div>
+        </form>
+    </div>
+</section>
 
-        <label>Last Name:</label>
-        <input type="text" id="txtLastName" name="lastName" required>
-        <br>
-
-        <label>Email:</label>
-        <input type="email" id="txtEmail" name="email" required>
-        <br>
-
-        <label>Comments:</label>
-        <textarea id="txtComments" name="comments" required></textarea>
-        <br>
-            
-        <input type="submit" value="SUBMIT">   
-    </form>
+    

@@ -3,7 +3,7 @@
     <head> 
       <meta charset="utf-8"> 
       <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-      <title>{{ title }}</title> 
+      <title>jQuery Syntax</title> 
       <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/styles/main.css">
       <link rel="stylesheet" type="text/css" href="/styles/prism.css">
@@ -52,9 +52,50 @@
     </nav>
       <main>
         <div class="text-center">
-          <h1 class="text-warning">{{ title }}</h1>
+          <h1 class="text-warning">jQuery Syntax</h1>
         </div> 
-        {{ content | safe }}
+        <section id="jQuery">
+    <div class="container-lg">
+        <p>
+            jQuery is a lightweight JavaScript library that allows you to write less JavaScript code while doing more. The reason to use jQuery is because it makes it much easier to use 
+            JavaScript on your website. jQuery can take a large amount of ordinary tasks that require many lines of JavaScript code to achieve, and wraps them into methods that you can call
+            with a single line of code.
+        </p>
+        <p>
+            The jQuery syntax is customized for selecting HTML elements and performing an action on the elements. Below is an example of the jQuery syntax:
+        </p>
+        <pre>
+            <code class="language-js">
+                // hides the current element
+                $(this).hide();
+        
+                // removes the selected element and its child elements
+                $("h1").remove();
+            </code>
+        </pre>
+        <p>
+            The "$" sign is used to define and access the jQuery. After that, you need a selector inside the parentheses to find HTML elements. Lastly, you can use any action the jQuery has to 
+            be performed on the elements.
+        </p>
+        <p>
+            An important thing to know is that you should always put jQuery methods inside a <b>document ready event</b>. This event prevents the jQuery code from running before the document is 
+            fully loaded. Waiting for the document to be fully loaded before working with it is always a good idea. Doing this also allows you to have your JavaScript code before the body of your
+            document, in the head section. Below is an example of how to use the document ready event:
+        </p>
+        <pre>
+            <code class="language-js">
+                $(document).ready(function(){
+        
+                    // insert jQuery methods here
+                    $("p").hide();
+                  
+                });
+            </code>
+        </pre>
+        
+    </div>
+</section>
+
       </main> 
       <footer class="fs-6 py-2">
         <div class="d-flex align-items-center footer mt-4">

@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+    <html lang="en"> 
+    <head> 
+      <meta charset="utf-8"> 
+      <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+      <title>The Temporal API</title> 
+      <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="/styles/main.css">
+      <link rel="stylesheet" type="text/css" href="/styles/prism.css">
+      <script src="/js/prism.js"></script>
+      <script src="/js/bootstrap.min.js" defer></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"/>
+      <style>
+      section{
+        padding: 60px 0;
+        min-height: 600px;
+      }
+      </style>
+    </head> 
+    <body> 
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4 ">
+      <div class="container-xxl">
+        <a class="navbar-brand">
+          <span class="text-primary fw-bold">
+            <i class="bi bi-bootstrap-fill"></i>
+            Intermediate Web Development
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact/">
+                <i class="bi bi-envelope"></i>
+                Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">
+                <i class="bi bi-chat-right-text fa-sm"></i>
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <main>
+        <div class="text-center">
+          <h1 class="text-warning">The Temporal API</h1>
+        </div> 
+        <section id="temporal-api">
+    <div class="container-lg">
+        <p>
+            The Temporal API is a global Object that acts as a top-level namespace. It brings a modern date/time API to the ECMAScript language. Since the Date API has been a 
+            established problem in ECMAScript, the Temporal API was proposed to be a solution for the difficulty of the Date API. The Temporal API fixes these problems by providing practicality
+            for date and time computations, first-class support for all time zones, deals only with objects representing fixed dates and times, parsing a strictly specified string format, and
+            supporting non-Gregorian calendars. Temporal provides separate ECMAScript classes for date-only, time-only, and other scoped use cases. Code is more readable and prevents bugs 
+            caused by incorrectly assuming 0, UTC, or the local time zone for values that are literally unspecified.
+        </p>
+        <p>
+            Below are some examples of using the Temporal API:
+        </p>
+        <h4>Temporal.ZonedDateTime</h4>
+        <p>
+            A Temporal.ZonedDateTime is a timezone-aware, calendar-aware date/time object that represents a real event that has happened at a specific exact time from the outlook of a 
+            certain region on Earth. The use of Temporal.ZoneDateTime is to improve the cases that require a time zone.
+        </p>
+        <pre>
+            <code class="language-js">
+                const zonedDateTime = Temporal.ZonedDateTime.from({
+                  timeZone: 'America/Onalaska',
+                  year: 2022,
+                  month: 4,
+                  day: 19,
+                  hour: 6,
+                  minute: 31,
+                  second: 21,
+                  millisecond: 0,
+                  microsecond: 3,
+                  nanosecond: 500
+                }); // => 2022-04-19T06:31:21.0000035-08:00[America/Onalaska]
+            </code>
+        </pre>
+        <h4>Temporal.Calendar</h4>
+        <p>
+            A Temporal.Calendar represents a calendar system. There are many calendar systems to use but most code will use the ISO 8601 calendar. Dates have associated Temporal.Calendar objects,
+            to perform calendar-related math. Beneath all of this, math is done by methods on the calendars.
+        </p>
+        <pre>
+            <code class="language-js">
+                const calendar = Temporal.Calendar.from('iso8601');
+                const date = calendar.dateFromFields({ year: 1999, month: 12, day: 31 }, {});
+                date.monthsInYear; // => 12
+                date.daysInYear; // => 365
+            </code>
+        </pre>
+    </div>
+</section>
+
+      </main> 
+      <footer class="fs-6 py-2">
+        <div class="d-flex align-items-center footer mt-4">
+          <p class="m-auto">
+            &copy; Kobari Xiong 2022
+          </p>
+        </div>
+      </footer>
+    </body>  
+    </html>
